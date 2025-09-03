@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-    --vinho: #800020;
-    --rosa: #FFC0CB;
+    --navy: #001F54;
+    --celeste: #87CEEB;
     --branco: #FFFFFF;
-    --cinza-claro: #f8f8f8;
-    --cinza-escuro: #333333;
+    --preto: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,17 +16,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--cinza-claro);
-    color: var(--cinza-escuro);
+    background-color: var(--branco);
+    color: var(--preto);
     line-height: 1.6;
 }
 
 header {
-    background-color: var(--vinho);
+    background-color: var(--navy);
     color: var(--branco);
     padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
@@ -47,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--rosa);
+    color: var(--celeste);
 }
 
 .section {
@@ -55,17 +58,38 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--branco);
-    border-bottom: 1px solid var(--cinza-claro);
+    border-bottom: 1px solid var(--celeste);
+}
+
+.section:last-of-type {
+    border-bottom: none;
 }
 
 .section h2 {
-    color: var(--vinho);
+    color: var(--navy);
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
+
+button {
+    background-color: #001F54;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #001F54;
+}
+
 
 .produtos {
     display: grid;
@@ -77,17 +101,17 @@ nav a:hover {
 
 .produto {
     background-color: var(--branco);
-    border: 1px solid var(--rosa);
+    border: 1px solid var(--celeste);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .produto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .produto img {
@@ -98,26 +122,30 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
+.produto h3 {
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+}
+
 .produto p {
-    color: var(--cinza-escuro);
+    color: var(--preto);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
-#Endereço,
-#Contato {
+#endereco,
+#contato {
     text-align: center;
 }
 
-#Endereço p,
-#Contato p {
+#endereco p,
+#contato p {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    justify-content: center;
 }
 
 footer {
-    background-color: var(--vinho);
+    background-color: var(--navy);
     color: var(--branco);
     text-align: center;
     padding: 1.5rem 0;
@@ -125,25 +153,25 @@ footer {
     font-size: 0.9rem;
 }
 
-@media (max-width: 768px){
-    header h1{
+@media (max-width: 768px) {
+    header h1 {
         font-size: 2rem;
     }
 
-    nav a{
+    nav a {
         display: block;
         margin: 0.8rem 0;
     }
-    
-    .section{
+
+    .section {
         padding: 2rem 3%;
     }
 
-    .section h2{
+    .section h2 {
         font-size: 1.8rem;
     }
 
-    .produtos{
+    .produtos {
         grid-template-columns: 1fr;
     }
 }
